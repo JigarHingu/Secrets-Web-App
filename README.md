@@ -16,15 +16,15 @@ Secrets is a web application that allows users to anonymously share their secret
 - **Google OAuth 2.0**: Authentication strategy for allowing users to sign in with Google accounts.
 
 ## Installation
-1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd <project-directory>`
+1. Clone the repository: `git clone https://github.com/JigarHingu/Secrets-Web-App`
+2. Navigate to the project directory: `cd Secrets Web App`
 3. Install dependencies: `npm install`
 4. Set up environment variables by creating a `.env` file and adding the following:
 
 CLIENT_ID=your-google-client-id
 CLIENT_SECRET=your-google-client-secret
 
-5. Start the server: `npm start`
+5. Start the server: `node app.js`
 
 ## Usage
 1. Visit the website and register for an account or sign in with Google.
@@ -33,4 +33,3 @@ CLIENT_SECRET=your-google-client-secret
 
 ## Contributing
 Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or create a pull request.
-
