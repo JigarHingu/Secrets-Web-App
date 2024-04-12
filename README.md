@@ -21,8 +21,8 @@ Secrets is a web application that allows users to anonymously share their secret
 3. Install dependencies: `npm install`
 4. Set up environment variables by creating a `.env` file and adding the following:
 
-CLIENT_ID=your-google-client-id
-CLIENT_SECRET=your-google-client-secret
+- CLIENT_ID=your-google-client-id
+- CLIENT_SECRET=your-google-client-secret
 
 5. Start the server: `node app.js`
 
