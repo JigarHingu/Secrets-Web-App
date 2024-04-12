@@ -1,0 +1,77 @@
+body {
+  background-color: #E8ECEF;
+  /* margin-top: -48px; */
+
+}
+
+.centered {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+/* Style for footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  /* Change the background color as needed */
+  color: #fff;
+  /* Change the text color as needed */
+  padding: 20px;
+  /* Add padding to provide spacing */
+  text-align: center;
+  /* Align text to center */
+}
+
+/* Style for paragraph inside footer */
+footer p {
+  margin: 0;
+  /* Remove default margin */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: #333;
+  /* Dark background color */
+}
+
+.dropdown-item {
+  color: #ffffff;
+  /* Text color */
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+  /* Hover background color */
+}
+
+.bg-dark {
+  background-color: #333 !important;
+  border-color: #f5f9fa;
+}
+
+.btn-light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #212529;
+}
+

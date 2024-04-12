@@ -1,0 +1,152 @@
+/* styles/welcome.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero section styles */
+
+.button {
+    background-color: #fff;
+    /* Blue */
+    border: 1px solid #333;
+    ;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* a.button:hover {
+    color: #030303; 
+} */
+
+.hero {
+    background-color: #fff;
+    color: #333;
+    padding: 50px 0; /* Keep padding as needed */
+    text-align: center;
+    padding-bottom: 1px;
+    padding-top: 75px;
+
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 20px 0; /* Adjust margin to create space */
+    color: #333;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 20px 0; /* Adjust margin to create space */
+    color: #333;
+    /* margin-top: 40px; */
+
+}
+
+
+/* .btn-google {
+    display: inline-block;
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+} */
+
+/* .btn-google:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-google img {
+    vertical-align: middle;
+    padding-bottom: 0px;
+    height: 50px;
+    width: 50px;
+    margin-right: 0px;
+    margin-right: 0px;
+} */
+
+/* Features section styles */
+.features {
+    background-color: #fff;
+    padding: 45px 0;
+    margin-top: 0;
+
+}
+
+.features h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
