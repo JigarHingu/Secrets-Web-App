@@ -67,16 +67,6 @@ passport.deserializeUser(function (id, done) {
     });
 });
 
-// passport.deserializeUser(function (id, done) {
-//   User.findById(id)
-//   .then(user => {
-//     done(null, user);
-//   })
-//   .catch(err => {
-//     done(err, null);
-//   });
-// });
-
 passport.use(
   new GoogleStrategy(
     {
