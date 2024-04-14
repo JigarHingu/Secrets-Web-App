@@ -10,7 +10,7 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -31,7 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB")
+mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log('MongoDB connection successful.'))
 .catch((error) => console.error("MongoDB connection failed:", error.message))
 
@@ -215,6 +215,6 @@ app.get("/welcome", function (req, res) {
   res.render("welcome");
 });
 
-app.listen(port, function () {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(PORT, function () {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
