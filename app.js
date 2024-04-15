@@ -8,9 +8,10 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const MongoStore = require("connect-mongo");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -20,20 +21,28 @@ app.use(
   })
 );
 
+// Create a new instance of MongoStore
+const store = MongoStore.create({mongoUrl: process.env.MONGO_URL});
 app.use(
   session({
     secret: "Kyaa Farkk Padtaa Hai.",
     resave: false,
     saveUninitialized: false,
+    store: store,
   })
 );
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB")
-.then(() => console.log('MongoDB connection successful.'))
-.catch((error) => console.error("MongoDB connection failed:", error.message))
+mongoose.connect(process.env.MONGO_URL);
+
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB successfully!");
+});
 
 const userSchema = new mongoose.Schema({
   email: String,
@@ -66,16 +75,6 @@ passport.deserializeUser(function (id, done) {
       done(err, null);
     });
 });
-
-// passport.deserializeUser(function (id, done) {
-//   User.findById(id)
-//   .then(user => {
-//     done(null, user);
-//   })
-//   .catch(err => {
-//     done(err, null);
-//   });
-// });
 
 passport.use(
   new GoogleStrategy(
@@ -225,6 +224,6 @@ app.get("/welcome", function (req, res) {
   res.render("welcome");
 });
 
-app.listen(port, function () {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(PORT, function () {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
