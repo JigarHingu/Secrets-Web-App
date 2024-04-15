@@ -8,7 +8,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
-const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,21 +21,28 @@ app.use(
   })
 );
 
+// Create a new instance of MongoStore
+const store = MongoStore.create({mongoUrl: process.env.MONGO_URL});
 app.use(
   session({
     secret: "Kyaa Farkk Padtaa Hai.",
     resave: false,
     saveUninitialized: false,
-     store: new MongoStore({ mongooseConnection: mongoose.connection }), // Use connect-mongo
+    store: store,
   })
 );
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(process.env.MONGO_URL)
-.then(() => console.log('MongoDB connection successful.'))
-.catch((error) => console.error("MongoDB connection failed:", error.message))
+mongoose.connect(process.env.MONGO_URL);
+
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB successfully!");
+});
 
 const userSchema = new mongoose.Schema({
   email: String,
