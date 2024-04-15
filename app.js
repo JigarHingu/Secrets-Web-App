@@ -8,6 +8,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const MongoStore = require("connect-mongo")(session);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +26,7 @@ app.use(
     secret: "Kyaa Farkk Padtaa Hai.",
     resave: false,
     saveUninitialized: false,
+     store: new MongoStore({ mongooseConnection: mongoose.connection }), // Use connect-mongo
   })
 );
 
