@@ -81,7 +81,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/secrets",
+      callbackURL:"https://secrets-web-app-wt4j.onrender.com/auth/google/secrets",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -227,3 +227,4 @@ app.get("/welcome", function (req, res) {
 app.listen(PORT, function () {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
