@@ -31,7 +31,7 @@ Secrets is a web application that allows users to anonymously share their secret
 2. Share your secrets anonymously or view secrets shared by other users.
 3. Log out when finished.
 
-[Live Demo](https://secrets-web-app-wt4j.onrender.com)
+[Live Demo] = https://secrets-web-app-wt4j.onrender.com
 
 
 ## Contributing
