@@ -82,6 +82,7 @@ passport.use(
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       callbackURL:"https://secrets-web-app-wt4j.onrender.com/auth/google/secrets",
+      // (for run this code locally us this callvackURL:http://localhost:3000/auth/google/secrets", )
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
